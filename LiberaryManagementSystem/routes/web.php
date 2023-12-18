@@ -28,4 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('books/{id}/manage-count', [BookCountController::class, 'manageCount'])->name('books.manageCount');
+Route::put('books/{id}/update-count', [BookCountController::class, 'updateCount'])->name('books.updateCount');
+
 require __DIR__.'/auth.php';
